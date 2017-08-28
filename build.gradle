@@ -1,0 +1,39 @@
+group 'gradle-ssm'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+//Gradle 插件 gradle_templet,这是一款生成项目标准目录结构和类的插件,支持多种语言  gradle createJavaProject
+apply from: 'http://www.tellurianring.com/projects/gradle-plugins/gradle-templates/1.3/apply.groovy'
+
+
+sourceCompatibility = 1.5
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework:spring-webmvc:4.3.7.RELEASE'
+
+    //=================>database jar<=============
+//    compile 'org.mongodb:bson:3.4.2'
+    compile 'com.alibaba:druid:1.0.23'
+    compile 'org.mybatis:mybatis:3.4.2'
+    compile 'org.mybatis:mybatis-spring:1.3.1'
+    compile 'org.postgresql:postgresql:9.4.1212.jre7'
+    compile 'redis.clients:jedis:2.9.0'
+    compile 'org.springframework.data:spring-data-redis:1.8.0.RELEASE'
+    compile 'org.springframework:spring-orm:4.3.6.RELEASE'
+    //=================>json jar<=================
+    compile 'com.alibaba:fastjson:1.2.24'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.7.3'
+    compile 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.7.3'
+    //=================>others<===================
+//    compile 'javax.servlet:javax.servlet-api:3.1.0'
+    compile 'jstl:jstl:1.2'
+    compile 'joda-time:joda-time:2.9.7'
+    compile 'org.apache.commons:commons-lang3:3.5'
+
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
